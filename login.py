@@ -2,7 +2,6 @@ import os
 from functions import *
 from tkinter import *
 from tkinter import ttk
-import sys
 
 root = Tk()
 root.title('SaveMi')
@@ -22,8 +21,6 @@ def OnClick():
 
     if(boolean):
         root.destroy()
-        # insert at 1, 0 is the script path (or '' in REPL)
-        sys.path.insert(1, 'C:/Users/nicol/Documents/pythonProject/SaveMi')
         import main
 
 
