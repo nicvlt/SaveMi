@@ -22,13 +22,10 @@ def uncrypt(string: str):
 def add_to_file(id: str, mdp: str):
     # apen file
     try:
-        store_file = open(
-            'C:/Users/nicol/Documents/pythonProject/SaveMi/data.txt', 'x')
-        store_file = open(
-            'C:/Users/nicol/Documents/pythonProject/SaveMi/data.txt', 'r')
+        store_file = open('data.txt', 'x')
+        store_file = open('data.txt', 'r')
     except FileExistsError:
-        store_file = open(
-            'C:/Users/nicol/Documents/pythonProject/SaveMi/data.txt', 'r')
+        store_file = open('data.txt', 'r')
 
     # check if already in file
     word_search = bad_crypt(id) + ',' + bad_crypt(mdp)
@@ -37,8 +34,7 @@ def add_to_file(id: str, mdp: str):
             title='SaveMi', message='The password & ID are already saved in')
 
     else:
-        store_file = open(
-            'C:/Users/nicol/Documents/pythonProject/SaveMi/data.txt', 'a')
+        store_file = open('data.txt', 'a')
         store_file.write(bad_crypt(id) + ',' + bad_crypt(mdp) + "\n")
 
     store_file.close()
@@ -46,13 +42,10 @@ def add_to_file(id: str, mdp: str):
 
 def file_to_table():
     try:
-        file = open(
-            'C:/Users/nicol/Documents/pythonProject/SaveMi/data.txt', 'x')
-        file = open(
-            'C:/Users/nicol/Documents/pythonProject/SaveMi/data.txt', 'r')
+        file = open('data.txt', 'x')
+        file = open('data.txt', 'r')
     except FileExistsError:
-        file = open(
-            'C:/Users/nicol/Documents/pythonProject/SaveMi/data.txt', 'r')
+        file = open('data.txt', 'r')
     lines = file.readlines()
     list = []
     for line in lines:
@@ -76,23 +69,21 @@ def delete_in_file(string: str):
     # get all lines
     try:
         a_file = open(
-            'C:/Users/nicol/Documents/pythonProject/SaveMi/data.txt', 'x')
+            'data.txt', 'x')
         a_file = open(
-            'C:/Users/nicol/Documents/pythonProject/SaveMi/data.txt', 'r')
+            'data.txt', 'r')
     except FileExistsError:
         a_file = open(
-            'C:/Users/nicol/Documents/pythonProject/SaveMi/data.txt', 'r')
+            'data.txt', 'r')
     lines = a_file.readlines()
     a_file.close()
 
     # delete useless data
-    if search_string_in_file('C:/Users/nicol/Documents/pythonProject/SaveMi/data.txt', string) != -1:
-        del lines[search_string_in_file(
-            'C:/Users/nicol/Documents/pythonProject/SaveMi/data.txt', string) - 1]
+    if search_string_in_file('data.txt', string) != -1:
+        del lines[search_string_in_file('data.txt', string) - 1]
 
     # create new file without useless data
-    new_file = open(
-        "C:/Users/nicol/Documents/pythonProject/SaveMi/data.txt", "w+")
+    new_file = open("data.txt", "w+")
     for line in lines:
         new_file.write(line)
     new_file.close()
@@ -111,13 +102,10 @@ def login_add_file(id: str, mdp: str):
 
     # apen file
     try:
-        store_file = open(
-            'C:/Users/nicol/Documents/pythonProject/SaveMi/login.txt', 'x')
-        store_file = open(
-            'C:/Users/nicol/Documents/pythonProject/SaveMi/login.txt', 'r')
+        store_file = open('login.txt', 'x')
+        store_file = open('login.txt', 'r')
     except FileExistsError:
-        store_file = open(
-            'C:/Users/nicol/Documents/pythonProject/SaveMi/login.txt', 'r')
+        store_file = open('login.txt', 'r')
 
     # check if already in file
     word_search = hash_id + ',' + hash_mdp
